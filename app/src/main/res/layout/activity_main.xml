@@ -1,7 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_margin="16dp">
 
+    <TextView
+        android:id="@+id/billAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/billAmount"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/leaveATip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/leaveATip"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toTopOf="@id/tips"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/billAmount" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tips"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/leaveATip"
+        app:layout_constraintWidth_max="640dp">
+
+        <LinearLayout
+            android:id="@+id/tipBoxOne"
+            style="@style/TipBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            app:layout_constraintEnd_toStartOf="@+id/tipBoxTwo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/TipTextLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tipPercentageOne" />
+
+            <TextView
+                style="@style/TipText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tipAmountOne" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tipBoxTwo"
+            style="@style/TipBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/tipBoxThree"
+            app:layout_constraintStart_toEndOf="@+id/tipBoxOne"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/TipTextLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tipPercentageTwo" />
+
+            <TextView
+                style="@style/TipText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tipAmountTwo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tipBoxThree"
+            style="@style/TipBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tipBoxTwo"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/TipTextLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tipPercentageThree" />
+
+            <TextView
+                style="@style/TipText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tipAmountThree" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tipCustomBox"
+            style="@style/TipBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tipBoxTwo">
+
+            <TextView
+                style="@style/TipText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/custom" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tipNothingBox"
+            style="@style/TipBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tipCustomBox">
+
+            <TextView
+                style="@style/TipText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/noTip" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

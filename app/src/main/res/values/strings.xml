@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">leave-a-tip</string>
+    <string name="billAmount">$14.57</string>
+    <string name="tipPercentageOne">15%</string>
+    <string name="tipAmountOne">$1.99</string>
+    <string name="tipPercentageTwo">20%</string>
+    <string name="tipAmountTwo">$2.65</string>
+    <string name="tipPercentageThree">25%</string>
+    <string name="tipAmountThree">$3.31</string>
+    <string name="leaveATip">Add a tip?</string>
+    <string name="custom">Custom</string>
+    <string name="noTip">No tip</string>
 </resources>

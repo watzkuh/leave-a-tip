@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TipBox">
+        <item name="android:background">@color/blue</item>
+        <item name="android:layout_marginStart">6dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:layout_marginEnd">6dp</item>
+        <item name="android:padding">12dp</item>
+    </style>
+    <style name="TipText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="TipTextLarge" parent="TipText">
+        <item name="android:textSize">32sp</item>
+    </style>
+
+</resources>
