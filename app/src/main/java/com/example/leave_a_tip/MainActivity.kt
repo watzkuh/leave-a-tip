@@ -1,21 +1,26 @@
 package com.example.leave_a_tip
 
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup.MarginLayoutParams
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.leave_a_tip.ui.theme.LeaveatipTheme
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updateLayoutParams
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        val root = findViewById<View>(R.id.root)
+        ViewCompat.setOnApplyWindowInsetsListener(root) { v, windowInsets ->
+            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.statusBars())
+            v.updateLayoutParams<MarginLayoutParams> {
+                topMargin = insets.top
+            }
+            WindowInsetsCompat.CONSUMED
+        }
     }
 }
